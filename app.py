@@ -10,8 +10,11 @@ classification_model = joblib.load('classification_model.joblib')
 regression_model = joblib.load('regression_model.joblib')
 label_encoder = joblib.load('label_encoder.joblib')
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['GET', 'POST'])
 def predict():
+    if request.method == 'GET':
+        return "Send POST request with JSON data"
+    
     data = request.get_json(force=True)
 
     required_features = ['Voltage (V)', 'Current (A)', 'Temperature (C)', 'Moisture (%)']
