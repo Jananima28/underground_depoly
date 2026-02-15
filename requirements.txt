@@ -4,4 +4,4 @@ numpy
 scikit-learn
 joblib
 flask-cors
- accuracy_score
+
