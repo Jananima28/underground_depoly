@@ -7,12 +7,6 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-from sklearn.metrics import accuracy_score
-
-y_pred = classification_model.predict(X_test)
-accuracy = accuracy_score(y_test, y_pred)
-
-print("Accuracy:", accuracy)
 
 # Load ML models
 classification_model = joblib.load('classification_model.joblib')
